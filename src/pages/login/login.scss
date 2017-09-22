@@ -1,0 +1,40 @@
+page-login {
+    form{
+        text-align:center;
+        margin: auto;
+        margin-top: 130px;
+    }
+    .has-focus{
+        border-bottom: none；
+    }
+    .item{
+        margin-top: 20px;
+        border:1px solid #cccccc;
+        border-radius: 5px;
+    }
+    .item:last-child{
+        margin-top: 20px;
+        border:0 !important;
+    }
+    // .item-block{
+    //     border-bottom: 0 !important;
+    // }
+    .item-ios.item-block .item-inner{
+        border: 0;
+    }
+    .item-inner{
+        border:none;
+    }
+    div .input-cover{
+        // border:1px solid #cccccc;
+        // border-radius: 5px;
+    }
+    div .input-wrapper{
+        // margin: 20px auto;
+        text-align:center;
+    }
+    button{
+        width: 200px;
+        height: 40px !important; 
+    }
+}
