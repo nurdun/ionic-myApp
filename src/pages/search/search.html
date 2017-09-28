@@ -6,9 +6,9 @@
 -->
 <ion-content>
   <ion-item class="search-box" >
-    <ion-searchbar style="" class="searchbar" (ionInput)="getItems($event)">
+    <ion-searchbar class="searchbar" (ionInput)="getItems($event)">
     </ion-searchbar>
-    <button style="" class="back-btn" (click)="goBack()" end>取消</button>
+    <button class="back-btn" (click)="goBack()" end>取消</button>
   </ion-item>
   <ion-list>
     <ion-item *ngFor="let item of items">

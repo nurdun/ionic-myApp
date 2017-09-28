@@ -16,6 +16,7 @@ import { SearchPageModule } from '../pages/search/search.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {IonicStorageModule} from '@ionic/storage';
+import { JPush } from 'ionic3-jpush';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import {IonicStorageModule} from '@ionic/storage';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      //mode:"ios"
+    }),
     IonicStorageModule.forRoot(),
     DetailPageModule,
     ContentPageModule,
@@ -51,7 +54,8 @@ import {IonicStorageModule} from '@ionic/storage';
     {
       provide: ErrorHandler, 
       useClass: IonicErrorHandler
-    }
+    },
+    JPush
   ]
 })
 export class AppModule {}

@@ -8,6 +8,8 @@ import {
   Platform,
   Nav 
 } from 'ionic-angular';
+import { JPush } from 'ionic3-jpush';
+import { Observable } from 'rxjs/Observable';
 
 import { DetailPage } from '../detail/detail';
 import { SearchPage } from '../search/search';
@@ -25,19 +27,38 @@ import { SearchPage } from '../search/search';
   templateUrl: 'content.html',
 })
 export class ContentPage {
-
   //设置默认segment的值
   cars: string = "carA";
   isAndroid: boolean = false;
+  alias: string = "";
+  msgList: Array<any> = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public nav: Nav,
-    platform: Platform
+    public jPush: JPush,
+    platform: Platform,
   ){
     this.isAndroid = platform.is('android');
+    
+    // this.jPush.startJPushSDK()
+    // .then(()=>{
+    //   this.jPush.init();
+    // })
+    // .then(()=>{
+    //   this.jPush.getRegistrationID().then(regid => {
+    //     console.log("regid:"+regid)
+    //   })
+    // })
+    this.jPush.init().then(()=>{
+      this.jPush.getRegistrationID().then(regid => {
+        console.log("regid:"+regid)
+      })
+    })
   }
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContentPage');
